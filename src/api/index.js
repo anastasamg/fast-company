@@ -3,3 +3,5 @@ const API = {
     users
 }
 export default API
+
+console.log('hey')
