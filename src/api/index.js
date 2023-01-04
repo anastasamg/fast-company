@@ -4,4 +4,3 @@ const API = {
 }
 export default API
 
-console.log('hello')
