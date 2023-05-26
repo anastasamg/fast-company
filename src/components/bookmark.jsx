@@ -1,13 +1,11 @@
 import React from "react"
 
-const BookMark = ({ bookmark, ...rest }) => {
-    const getBookmarkClasses = () => {
-        let classes = "bi bi-star"
-        classes += bookmark ? "" : "-fill"
-        return classes
-    }
-
-    return <i className={getBookmarkClasses()}></i>
+const BookMark = ({ status, ...rest }) => {
+    return (
+        <button {...rest}>
+            <i className={"bi bi-star" + (status ? "-fill" : "")}></i>
+        </button>
+    )
 }
 
 export default BookMark
