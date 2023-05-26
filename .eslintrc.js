@@ -7,13 +7,13 @@ module.exports = {
     overrides: [],
     parserOptions: {
         ecmaVersion: "latest",
-        sourceType: "module",
+        sourceType: "module"
     },
     plugins: ["react"],
     rules: {
         indent: ["error", 4],
         semi: ["error", "never"],
-        "space-before-function-paren": ["error", {anonymous: "always", named: "never"}
+        "space-before-function-paren": ["error", { anonymous: "always", named: "never" }
         ],
         quotes: ["error", "double", { allowTemplateLiterals: true }]
     }
