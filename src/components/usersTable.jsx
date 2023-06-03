@@ -33,7 +33,6 @@ const UserTable = ({ users, onSort, selectedSort, onToggleBookMark, onDelete, ..
         }
     }
     return (
-
         <Table
             onSort={onSort}
             selectedSort={selectedSort}

@@ -93,13 +93,21 @@ const Users = () => {
                             items={professions}
                             onItemSelect={handleProfessionSelect}
                         />
-                        <button className= "btn btn-secondary mt-2" onClick={clearFilter}>Очистить</button>
+                        <button className= "btn btn-secondary mt-2" onClick={clearFilter}>{" "}Очистить</button>
                     </div>
                 )}
 
                 <div className="d-flex flex-column">
                     <SearchStatus length={count} />
-                    {count > 0 && <UserTable users={usersCrop} onSort={handleSort} selectedSort={sortBy} onDelete={handleDelete} onToggleBookMark={handleToggleBookMark} /> }
+                    {count > 0 && (
+                        <UserTable
+                            users={usersCrop}
+                            onSort={handleSort}
+                            selectedSort={sortBy}
+                            onDelete={handleDelete}
+                            onToggleBookMark={handleToggleBookMark}
+                        />
+                    )}
                     <div className="d-flex justify-content-center">
                         <Pagination
                             itemsCount={count}
