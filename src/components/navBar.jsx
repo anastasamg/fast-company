@@ -1,11 +1,12 @@
 import React from "react"
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 const NavBar = () => {
     return (
         <ul className="nav">
-            <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Main</a></li>
-            <li className="nav-item"><a className="nav-link" aria-current="page" href="/login">Login</a></li>
-            <li className="nav-item"><a className="nav-link" aria-current="page" href="/users">Users</a></li>
+            <li className="nav-item"><Link className="nav-link" aria-current="page" to="/">Main</Link></li>
+            <li className="nav-item"><Link className="nav-link" aria-current="page" to="/login">Login</Link></li>
+            <li className="nav-item"><Link className="nav-link" aria-current="page" to="/users">Users</Link></li>
         </ul>
     )
 }
