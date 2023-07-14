@@ -40,7 +40,8 @@ const users = [
         qualities: [qualities.tedious, qualities.uncertain, qualities.strange],
         completedMeetings: 36,
         rate: 2.5,
-        bookmark: false
+        bookmark: false,
+        email: "dorian@mail.ru"
     },
     {
         _id: "67rdca3eeb7f6fgeed471816",
@@ -142,21 +143,38 @@ const users = [
         bookmark: false
     }
 ]
+if (!localStorage.getItem("users")) {
+    localStorage.setItem("users", JSON.stringify(users))
+  }
+  const fetchAll = () =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(JSON.parse(localStorage.getItem("users")))
+    }, 700)
+  })
 
-const fetchAll = () =>
+  const getById = (id) =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(
+        JSON.parse(localStorage.getItem("users")).find(
+          (user) => user._id === id
+        )
+      )
+    }, 800)
+  })
+
+    const update = (id, data) =>
     new Promise((resolve) => {
-        window.setTimeout(function () {
-            resolve(users)
-        }, 2000)
+      const users = JSON.parse(localStorage.getItem("users"))
+      const userIndex = users.findIndex((u) => u._id === id)
+      users[userIndex] = { ...users[userIndex], ...data }
+      localStorage.setItem("users", JSON.stringify(users))
+      resolve(users[userIndex])
     })
 
-const getById = (id) =>
-    new Promise((resolve) => {
-        window.setTimeout(function () {
-            resolve(users.find((user) => user._id === id))
-        }, 1000)
-    })
 export default {
     fetchAll,
-    getById
+    getById,
+    update
 }

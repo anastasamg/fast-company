@@ -49,6 +49,7 @@ const EditUserPage = () => {
         const isValid = validate()
         if (!isValid) return
         const { profession, qualities } = data
+        debugger
         api.users
             .update(userId, {
                 ...data,
@@ -91,6 +92,7 @@ const EditUserPage = () => {
             setQualities(qualitiesList)
         })
     }, [])
+
     useEffect(() => {
         if (data._id) setIsLoading(false)
     }, [data])
